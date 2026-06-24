@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .complete-checkbox {
+    @apply appearance-none flex-shrink-0 w-5 h-5 rounded-full border-2 border-border cursor-pointer relative transition-all duration-200;
+  }
+  .complete-checkbox:hover {
+    @apply border-primary;
+  }
+  .complete-checkbox:checked {
+    @apply bg-primary border-primary;
+  }
+  .complete-checkbox:checked::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 6px;
+    width: 5px;
+    height: 9px;
+    border: 2px solid #fff;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg);
+  }
+}
